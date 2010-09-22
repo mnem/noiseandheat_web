@@ -104,16 +104,18 @@ def write_vhost_file(vhost_path, domain_content_path, domain):
     
     log_verbose("Virtual host section: \n%s" % vhost_section )
     
+    file = None
     try:
         file = open(vhosts_filename, "w")
         file.write(vhost_section)
-    except OSError as e:
+    except IOError as e:
         if e.errno == 13:
-            fail("I'm sorry Dave, I can't let you do that. Perhaps you should sudo this script.")
+            fail("I'm sorry Dave, I can't let you write that file. Perhaps you should sudo this script.")
         else:
             raise e
     finally:
-        file.close();
+        if not file is None:
+            file.close();
 
 def copy_files(source, destination):
     """Recursively copies files from one location to another"""
