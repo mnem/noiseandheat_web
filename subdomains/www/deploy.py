@@ -40,8 +40,8 @@ from deployment.deploy_domain import write_vhost_file
 # Defaults for the command line arguments
 SUBDOMAIN = "noiseandheat.com"
 CONTENT   = os.path.join(this_script_dir, "content")
-WWW       = "./var/www"
-VHOSTS    = "./etc/httpd/vhosts.d"
+WWW       = "/var/www"
+VHOSTS    = "/etc/httpd/vhosts.d"
 USER      = "apache"
 GROUP     = "apache"
 VERBOSE   = False

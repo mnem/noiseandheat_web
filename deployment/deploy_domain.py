@@ -87,7 +87,7 @@ def delete_folder_if_exists(path):
 
 def write_vhost_file(vhost_path, domain_content_path, domain):
     """Writes the virtual hosts file"""
-    vhosts_filename = os.path.join(vhost_path, domain)
+    vhosts_filename = os.path.join(vhost_path, domain + ".vhost")
     
     if os.path.exists(vhosts_filename):
         log_verbose("Overwriting existing vhost file: %s" % vhosts_filename )
