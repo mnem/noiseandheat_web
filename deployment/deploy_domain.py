@@ -153,7 +153,7 @@ def set_owner_and_group(path, owner, group):
             log_verbose("chown %d:%d %s" % (owner_numeric, group_numeric, item))
             os.chown(item, owner_numeric, group_numeric)
 
-def deploy_domain(subdomain, content, www, vhosts, user, group, verbose):
+def deploy_domain(subdomain, content, www, vhosts, user, group, verbose, aliases=[]):
     global VERBOSE
     VERBOSE = verbose
 
@@ -172,6 +172,11 @@ def deploy_domain(subdomain, content, www, vhosts, user, group, verbose):
     create_folder_if_needed(vhosts)
     
     write_vhost_file(vhosts, domain_content_path, subdomain)
+    
+    if len(aliases) > 0:
+        log("-----[Creating virtual host aliases]")
+        for alias in aliases:
+            write_vhost_file(vhosts, domain_content_path, alias)
     
     log("-----[Copying content]")
     delete_folder_if_exists(domain_content_path)

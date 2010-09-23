@@ -34,13 +34,14 @@ this_script_dir=os.path.dirname(os.path.realpath(__file__))
 deployment_module_path = os.path.join(this_script_dir, "..", "..")
 sys.path.append(deployment_module_path)
 from deployment.deploy_domain import deploy_domain
+from deployment.deploy_domain import write_vhost_file
 
 #############################################
 # Defaults for the command line arguments
 SUBDOMAIN = "noiseandheat.com"
 CONTENT   = os.path.join(this_script_dir, "content")
-WWW       = "/var/www"
-VHOSTS    = "/etc/httpd/vhosts.d"
+WWW       = "./var/www"
+VHOSTS    = "./etc/httpd/vhosts.d"
 USER      = "apache"
 GROUP     = "apache"
 VERBOSE   = False
@@ -65,4 +66,5 @@ deploy_domain(subdomain = opts.subdomain,
               vhosts    = opts.vhosts, 
               user      = opts.user, 
               group     = opts.group, 
+              aliases   = ["www.noiseandheat.com"],
               verbose   = opts.verbose)
