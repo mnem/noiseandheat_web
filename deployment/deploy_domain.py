@@ -153,7 +153,7 @@ def set_owner_and_group(path, owner, group):
             log_verbose("chown %d:%d %s" % (owner_numeric, group_numeric, item))
             os.chown(item, owner_numeric, group_numeric)
 
-def deploy_domain(subdomain, www, vhosts, user, group, verbose):
+def deploy_domain(subdomain, content, www, vhosts, user, group, verbose):
     global VERBOSE
     VERBOSE = verbose
 
@@ -176,7 +176,7 @@ def deploy_domain(subdomain, www, vhosts, user, group, verbose):
     log("-----[Copying content]")
     delete_folder_if_exists(domain_content_path)
     
-    copy_files("content", domain_content_path)
+    copy_files(content, domain_content_path)
     
     log("-----[Updating permissions]")
     set_owner_and_group(domain_content_path, user, group)
@@ -185,6 +185,7 @@ def main():
     """Main entry point"""
     op = OptionParser("usage: %prog [options]")
     op.add_option("-s", "--subdomain", default="noiseandheat.com", help="The subdomain to create a vhost for. [%default]")
+    op.add_option("-c", "--content", default="content", help="The content to copy. [%default]")
     op.add_option("-w", "--www", default="/var/www", help="Domains content root. The subdomain will be created as a folder on this path. [%default]")
     op.add_option("-V", "--vhosts", default="/etc/httpd/vhosts.d", help="Virtual hosts conf folder. [%default]")
     op.add_option("-u", "--user", default="apache", help="The owner to set for the content files. [%default]")
@@ -192,7 +193,8 @@ def main():
     op.add_option("-v", "--verbose", action="store_true", default=True, help="Enable verbose output. [%default]")
     opts, args = op.parse_args()
     
-    do_deploy(subdomain = opts.subdomain, 
+    do_deploy(subdomain = opts.subdomain,
+              content   = opts.content, 
               www       = opts.www, 
               vhosts    = opts.vhosts, 
               user      = opts.user, 
