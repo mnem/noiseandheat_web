@@ -24,10 +24,39 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from deployment.server import ServerConfiguration
-from deployment.log import Log
-from deployment.virtual_host import VirtualHost
-from deployment.subdomain import Subdomain
+import os
+import grp
+import pwd
 
-server_config = ServerConfiguration()
-log = Log()
+from deployment import log
+
+def change_owner(path, owner, group):
+    """Recursively changes the path's owner and group membership to the
+    specified values."""
+    try:
+        owner_numeric = int(owner)
+    except ValueError:
+        try:
+            owner_numeric = pwd.getpwnam(owner).pw_uid
+        except KeyError:
+            raise ValueError("User doesn't seem to exist: %s" % owner)
+
+    try:
+        group_numeric = int(group)
+    except ValueError:
+        try:
+            group_numeric = grp.getgrnam(group).gr_gid
+        except KeyError:
+            raise ValueError("Group doesn't seem to exist: %s" % group)
+
+    def chown(target):
+        log.verbose("change_owner %d:%d %s" % (owner, group, target))
+        os.chown(target, owner, group)
+    
+    chown(path)
+
+    for root, dirs, files in os.walk(path):  
+        for momo in dirs:
+            chown(os.path.join(root, momo))
+        for momo in files:
+            chown(os.path.join(root, momo))

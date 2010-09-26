@@ -24,10 +24,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from deployment.server import ServerConfiguration
-from deployment.log import Log
-from deployment.virtual_host import VirtualHost
-from deployment.subdomain import Subdomain
+class Log(object):
+    """Simple logging class"""
 
-server_config = ServerConfiguration()
-log = Log()
+    def __init__(self, verbose=True):
+        self.verbose = verbose
+
+    def message(self, text):
+        """Logs a message to stdout"""
+        print(text)
+        
+    def verbose(self, text):
+        """Logs a message to stdout if verbose output is enabled"""
+        if verbose:
+            print(text)
+        
+    def fail(self, text):
+        """Logs a fail message to stdout and terminates the program"""
+        print("\n\n\a[FAIL] %s" % message)
+        raise SystemExit

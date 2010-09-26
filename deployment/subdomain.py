@@ -24,10 +24,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from deployment.server import ServerConfiguration
-from deployment.log import Log
-from deployment.virtual_host import VirtualHost
-from deployment.subdomain import Subdomain
+import shutil
 
-server_config = ServerConfiguration()
-log = Log()
+from deployment.utils import change_owner
+from deployment.virtual_host import VirtualHost
+
+class Subdomain(object):
+    """Provides an interface to manipulate subdomains"""
+    
+    def __init__(self, subdomain):
+        self.subdomain = subdomain
+        self.content_path = server_config.content_path(self.subdomain)
+        self.virtual_host = VirtualHost(self.subdomain)
+
+    def write_virtual_host_file(self):
+        self.virtual_host.write_conf()
+    
+    def set_content_filesystem_owner(self):
+        change_owner(self.content_path, 
+                     server_config.www_user, 
+                     server_config.www_group)
+    
+    def copy_to_content(self, source_path):
+        shutil.copytree(self.content_path, 
+                        destination)
+        self.set_content_filesystem_owner()

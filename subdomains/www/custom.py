@@ -24,10 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from deployment.server import ServerConfiguration
-from deployment.log import Log
-from deployment.virtual_host import VirtualHost
-from deployment.subdomain import Subdomain
-
-server_config = ServerConfiguration()
-log = Log()
+def main(subdomain, server_config, log):
+    # Create an alias for this subdomain at the top level
+    # i.e. noiseandheat.com
+    subdomain.virtual_host.write_conf("")
