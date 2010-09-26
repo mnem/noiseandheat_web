@@ -27,7 +27,8 @@ THE SOFTWARE.
 import os
 from datetime import datetime
 
-from deployment.utils import change_owner
+import deployment
+from deployment.utils import change_owner, ensure_directory_exists
 
 class VirtualHost(object):
     """Class allowing the creation of a virtual host configuration file
@@ -42,36 +43,42 @@ class VirtualHost(object):
         """Writes the virtual host configuration file to the configuration
         directory specified by the server_configuration object"""
         if override_subdomain is None:
-            conf_filename = server_config.virtual_host_conf_filename(self.subdomain)
+            conf_filename = deployment.server_config.virtual_host_conf_filename(self.subdomain)
         else:
-            conf_filename = server_config.virtual_host_conf_filename(override_subdomain)
+            conf_filename = deployment.server_config.virtual_host_conf_filename(override_subdomain)
         
-        content_path = server_config.content_path(self.subdomain)
+        content_path = deployment.server_config.content_path(self.subdomain)
 
         if os.path.exists(conf_filename):
-            log.verbose("Overwriting existing vhost file: %s" % conf_filename )
+            deployment.log.message("Overwriting existing vhost file: %s" % conf_filename, 0)
         else:
-            log.verbose("Creating new vhost file: %s" % conf_filename )
+            deployment.log.message("Creating new vhost file: %s" % conf_filename, 0)
 
         params = dict(
             timestamp = datetime.utcnow().isoformat(" "),
             content   = content_path,
             domain    = self.subdomain
         )
-        virtual_host_section = _VIRTUAL_HOST_SECTION_TEMPLATE % params
-        log.verbose("Virtual host section:\n%s" % virtual_host_section )
+        virtual_host_section = VirtualHost._VIRTUAL_HOST_SECTION_TEMPLATE % params
+        deployment.log.message("Virtual host section:\n%s" % virtual_host_section, 0)
 
         try:
+            ensure_directory_exists(deployment.server_config.virtual_hosts_conf_root)
             file = open(conf_filename, "w")
             file.write(virtual_host_section)
             file.close();
             change_owner(conf_filename, 
-                         server_config.www_user, 
-                         server_config.www_group)
+                         deployment.server_config.www_user, 
+                         deployment.server_config.www_group)
         except IOError as e:
             if e.errno == 13:
-                log.fail("Cannot write to file. "
-                         "Perhaps you should sudo this script.")
+                deployment.log.fail("Cannot write to file. "
+                                    "Perhaps you should sudo this script.")
             else:
                 raise e
         
+    _VIRTUAL_HOST_SECTION_TEMPLATE = ("# Created %(timestamp)s\n"
+                                      "<VirtualHost *:80>\n"
+                                      "    DocumentRoot %(content)s\n"
+                                      "    ServerName %(domain)s\n"
+                                      "</VirtualHost>\n")

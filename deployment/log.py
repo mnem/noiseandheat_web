@@ -27,16 +27,12 @@ THE SOFTWARE.
 class Log(object):
     """Simple logging class"""
 
-    def __init__(self, verbose=True):
-        self.verbose = verbose
+    def __init__(self, log_level=0):
+        self.log_level = log_level
 
-    def message(self, text):
+    def message(self, text, level=1):
         """Logs a message to stdout"""
-        print(text)
-        
-    def verbose(self, text):
-        """Logs a message to stdout if verbose output is enabled"""
-        if verbose:
+        if level >= self.log_level:
             print(text)
         
     def fail(self, text):

@@ -52,10 +52,10 @@ class ServerConfiguration(object):
     def virtual_host_conf_filename(self, subdomain):
         """Returns the filename for the virtual host configuration for the
         subdomain."""
-        return os.path.join(virtual_hosts_conf_root,
+        return os.path.join(self.virtual_hosts_conf_root,
                             self.full_domain_name(subdomain) + ".vhost")
 
     def content_path(self, subdomain):
         """Returns the base bath for the content for the subdomain."""
-        return os.path.join(htdocs_root, self.full_domain_name(subdomain))
+        return os.path.join(self.htdocs_root, self.full_domain_name(subdomain))
         

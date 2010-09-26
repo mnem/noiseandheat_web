@@ -27,8 +27,9 @@ THE SOFTWARE.
 import os
 import grp
 import pwd
+import shutil
 
-from deployment import log
+import deployment
 
 def change_owner(path, owner, group):
     """Recursively changes the path's owner and group membership to the
@@ -50,8 +51,8 @@ def change_owner(path, owner, group):
             raise ValueError("Group doesn't seem to exist: %s" % group)
 
     def chown(target):
-        log.verbose("change_owner %d:%d %s" % (owner, group, target))
-        os.chown(target, owner, group)
+        deployment.log.message("change_owner %s:%s (%d:%d) %s" % (owner, group, owner_numeric, group_numeric, target), 0)
+        os.chown(target, owner_numeric, group_numeric)
     
     chown(path)
 
@@ -60,3 +61,19 @@ def change_owner(path, owner, group):
             chown(os.path.join(root, momo))
         for momo in files:
             chown(os.path.join(root, momo))
+
+def ensure_directory_exists(directory):
+    """Ensures that the directory exists"""
+    if not os.path.isdir(directory):
+        os.makedirs(directory)
+
+def remove_if_exists_but_keep_backup(directory):
+    """Removes a directory if it exists by renaming by appending the 
+    first integer causing the name to be unique"""
+    if os.path.isdir(directory):
+        copy_number = 1
+        while os.path.exists("%s.%d" % (directory, copy_number)):
+            copy_number += 1
+        new_name = "%s.%d" % (directory, copy_number)
+        deployment.log.message("Moving folder out of the way: %s => %s" % (directory, new_name) ,0)
+        os.rename(directory, new_name)

@@ -26,22 +26,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-import sys
 import os
-import shutil
-import grp
-import pwd
+import glob
 from optparse import OptionParser
-from datetime import datetime
 
 import deployment
+from deployment.subdomain import Subdomain
 
 def deploy_subdomain(subdomain_config_root, subdomain):
     """Deploys a subdomain"""
-    deployment.log.message("Deploying subdomain %s from %s" % (subdomain, subdomain_config_root))
+    deployment.log.message("===== Deploying subdomain %s from %s" % (subdomain, subdomain_config_root))
     if os.path.isdir(subdomain_config_root):
         s = Subdomain(subdomain)
         s.write_virtual_host_file()
+        s.copy_to_content(os.path.join(subdomain_config_root, "content"))
+        for custom_step in glob.glob(os.path.join(subdomain_config_root, "*.py")):
+            custom_step_module, ext = os.path.splitext(custom_step)
+            print(">>>>>>>>> " + custom_step_module)
     else:
         deployment.log.message("Skipping %s because %s is not a directory" % (subdomain, subdomain_config_root))
     
@@ -58,20 +59,31 @@ def main():
     """Main entry point"""
     op = OptionParser("usage: %prog [options] <subdomains>")
     op.add_option("-s", "--subdomain_configs", default="subdomains", help="The folder all the subdomain configs live in. [%default]")
+    op.add_option("-u", "--www_user", default="apache", help="The owner for the content files. [%default]")
+    op.add_option("-g", "--www_group", default="apache", help="The group owner for the content files. [%default]")
     op.add_option("-o", "--output", default=None, help="Sets the output directory for testing purposes. [%default]")
     op.add_option("-v", "--verbose", default=False, action="store_true", help="Enable verbose output. [%default]")
     opts, args = op.parse_args()
 
-    deployment.log.verbose = opts.verbose
+    if opts.verbose:
+        deployment.log.log_level = 0
+    else:
+        deployment.log.log_level = 1
     domains_directory = os.path.realpath(opts.subdomain_configs)
+    deployment.server_config.www_user = opts.www_user
+    deployment.server_config.www_group = opts.www_group
     
     if opts.output is not None:
         test_output = os.path.realpath(opts.output)
         if not os.path.isdir(test_output):
             os.makedirs(test_output)
         deployment.log.message("Forcing output to %s" % test_output)
-        deployment.server_config.htdocs_root = os.path.join(test_output, deployment.server_config.htdocs_root)
-        deployment.server_config.virtual_hosts_conf_root = os.path.join(test_output, deployment.server_config.virtual_hosts_conf_root)
+        
+        drive, tail = os.path.splitdrive(deployment.server_config.htdocs_root)
+        deployment.server_config.htdocs_root = os.path.join(test_output, tail[1:])
+
+        drive, tail = os.path.splitdrive(deployment.server_config.virtual_hosts_conf_root)
+        deployment.server_config.virtual_hosts_conf_root = os.path.join(test_output, tail[1:])
     
     if len(args) == 0:
         deploy_all(domains_directory)
