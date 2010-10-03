@@ -29,13 +29,20 @@ class Log(object):
 
     def __init__(self, log_level=0):
         self.log_level = log_level
+        self.message_prefix = None
+
+    def _out(self, message):
+        if self.message_prefix is not None:
+            print("[%s] %s" % (self.message_prefix, message))
+        else:
+            print(message)
 
     def message(self, text, level=1):
         """Logs a message to stdout"""
         if level >= self.log_level:
-            print(text)
+            self._out(text)
         
     def fail(self, text):
         """Logs a fail message to stdout and terminates the program"""
-        print("\n\n\a[FAIL] %s" % message)
+        self._out("\a[FAIL] %s" % message)
         raise SystemExit

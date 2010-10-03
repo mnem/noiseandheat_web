@@ -25,6 +25,9 @@ THE SOFTWARE.
 """
 
 import os
+import subprocess
+
+import deployment
 
 class ServerConfiguration(object):
     """Holds the basic configuration information describing a server setup."""
@@ -59,3 +62,19 @@ class ServerConfiguration(object):
         """Returns the base bath for the content for the subdomain."""
         return os.path.join(self.htdocs_root, self.full_domain_name(subdomain))
         
+    def restart(self):
+        """Attempts to restart the http server using a couple of commands"""
+        for restart_command in self._HTTPD_RESTART_COMMANDS:
+            deployment.log.message("\nTrying to restart httpd with '%s'" % restart_command)
+            p = subprocess.Popen(restart_command, shell=True)
+            p.wait()
+            if p.returncode == 0:
+                deployment.log.message("httpd restarted, I think.")
+                return
+            else:
+                deployment.log.message("Command failed with code %d. Trying another way." % p.returncode)
+        deployment.log.message("Giving up trying to restart httpd. You'll have to do it yourself.")
+        
+    _HTTPD_RESTART_COMMANDS = ["sudo service httpd restart",
+                               "sudo apachectl restart",
+                               "sudo apache2ctl restart"]

@@ -34,22 +34,46 @@ from optparse import OptionParser
 import deployment
 from deployment.subdomain import Subdomain
 
+def run_script(script, subdomain=None):
+    path, scriptname = os.path.split(script)
+    deployment.log.message("-- Running custom script %s" % scriptname)
+    deployment.log.message("-- [Changing directory to %s]" % path)
+    os.chdir(path)
+    deployment.log.message_prefix = scriptname
+    execfile(script, 
+             globals(), 
+             dict(subdomain=subdomain, 
+                  server_config=deployment.server_config, 
+                  log=deployment.log))
+    deployment.log.message_prefix = None
+    deployment.log.message("-- %s finished" % scriptname)
+
 def deploy_subdomain(subdomain_config_root, subdomain):
     """Deploys a subdomain and executes any python files in the subdomain folder"""
-    deployment.log.message("===== Deploying subdomain %s from %s" % (subdomain, subdomain_config_root))
+    deployment.log.message("\n\n===== Deploying subdomain %s from %s" % (subdomain, subdomain_config_root))
     if os.path.isdir(subdomain_config_root):
         s = Subdomain(subdomain)
         s.write_virtual_host_file()
         s.copy_to_content(os.path.join(subdomain_config_root, "content"))
         for custom_step in glob.glob(os.path.join(subdomain_config_root, "*.py")):
-            deployment.log.message("-- Running custom step %s" % custom_step)
-            os.chdir(subdomain_config_root)
-            execfile(custom_step, 
-                     globals(), 
-                     dict(subdomain=s, server_config=deployment.server_config, log=deployment.log))
-            deployment.log.message("-- %s finished" % custom_step)
+            run_script(custom_step, subdomain=s)
     else:
         deployment.log.message("Skipping %s because %s is not a directory" % (subdomain, subdomain_config_root))
+
+def deploy_subdomains(subdomains_directory, subdomains):
+    before_deploy_script = os.path.join(subdomains_directory, "before_deploy.py")
+    after_deploy_script = os.path.join(subdomains_directory, "after_deploy.py")
+    
+    if os.path.exists(before_deploy_script):
+        run_script(before_deploy_script)
+    
+    for subdomain in subdomains:
+        full_subdomain_path = os.path.join(subdomains_directory, subdomain)
+        if os.path.isdir(full_subdomain_path):
+            deploy_subdomain(full_subdomain_path, subdomain)
+            
+    if os.path.exists(after_deploy_script):
+        run_script(after_deploy_script)
     
 def main():
     """Main entry point"""
@@ -84,16 +108,12 @@ def main():
     deployment.server_config.www_group = configuration["www_group"]
     
     if len(args) == 1:
+        subdomain_list = os.listdir(domains_directory)
         deployment.log.message("Deploying all subdomains in %s" % domains_directory)
-        for subdomain in os.listdir(domains_directory):
-            full_subdomain_path = os.path.join(domains_directory, subdomain)
-            if os.path.isdir(full_subdomain_path):
-                deploy_subdomain(full_subdomain_path, subdomain)
     else:
         subdomain_list = args[1:]
         deployment.log.message("Deploying subdomains %s" % str(subdomain_list))
-        for subdomain in subdomain_list:
-            deploy_subdomain(os.path.join(domains_directory, subdomain), subdomain)
+    deploy_subdomains(domains_directory, subdomain_list)
 
 if __name__ == '__main__':
     main()
