@@ -44,8 +44,10 @@ class VirtualHost(object):
         directory specified by the server_configuration object"""
         if override_subdomain is None:
             conf_filename = deployment.server_config.virtual_host_conf_filename(self.subdomain)
+            domain_name = deployment.server_config.full_domain_name(self.subdomain)
         else:
             conf_filename = deployment.server_config.virtual_host_conf_filename(override_subdomain)
+            domain_name = deployment.server_config.full_domain_name(override_subdomain)
         
         content_path = deployment.server_config.content_path(self.subdomain)
 
@@ -57,7 +59,7 @@ class VirtualHost(object):
         params = dict(
             timestamp = datetime.utcnow().isoformat(" "),
             content   = content_path,
-            domain    = self.subdomain
+            domain    = domain_name
         )
         virtual_host_section = VirtualHost._VIRTUAL_HOST_SECTION_TEMPLATE % params
         deployment.log.message("Virtual host section:\n%s" % virtual_host_section, 0)

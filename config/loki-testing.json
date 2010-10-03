@@ -1,0 +1,9 @@
+{
+    "subdomains_path" : "subdomains",
+
+    "domain" : "noiseandheat.com",
+    "htdocs_root" : "/Users/dave/Sites/noiseandheat.com/content",
+    "virtual_hosts_conf_root" : "/Users/dave/Sites/noiseandheat.com/vhosts.d",
+    "www_user" : "dave",
+    "www_group"  : "staff"
+}

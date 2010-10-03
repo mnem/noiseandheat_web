@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# encoding: utf-8
 """
 Licensed under the MIT license:
 
@@ -23,8 +25,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
+import subprocess
+import tempfile
+import os
 
-def main(subdomain, server_config, log):
-    # Create an alias for this subdomain at the top level
-    # i.e. noiseandheat.com
-    subdomain.virtual_host.write_conf("")
+# Locals supplied to the file:
+#   subdomain: subdomain object for this subdomain
+#   server_config: server_config object
+#   log: log object
+log.message("Downloading latest wordpress")
+tmpdir = tempfile.mkdtemp(prefix=(server_config.full_domain_name(subdomain.subdomain) + "."))
+os.chdir(tmpdir)
+log.message("Working in temporary directory: %s" % tmpdir)
+p = subprocess.Popen("wget http://wordpress.org/latest.zip", shell=True)
+p.wait()

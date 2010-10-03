@@ -1,0 +1,9 @@
+{
+    "subdomains_path" : "subdomains",
+
+    "domain" : "noiseandheat.com",
+    "htdocs_root" : "/var/www",
+    "virtual_hosts_conf_root" : "/etc/httpd/vhosts.d",
+    "www_user" : "apache",
+    "www_group"  : "apache"
+}

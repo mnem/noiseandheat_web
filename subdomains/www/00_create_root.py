@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# encoding: utf-8
 """
 Licensed under the MIT license:
 
@@ -24,30 +26,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-import shutil
+# Locals supplied to the file:
+#   subdomain: subdomain object for this subdomain
+#   server_config: server_config object
+#   log: log object
 
-import deployment
-from deployment.utils import change_owner, remove_if_exists_but_keep_backup, ensure_directory_exists
-from deployment.virtual_host import VirtualHost
-
-class Subdomain(object):
-    """Provides an interface to manipulate subdomains"""
-    
-    def __init__(self, subdomain):
-        self.subdomain = subdomain
-        self.content_path = deployment.server_config.content_path(self.subdomain)
-        self.virtual_host = VirtualHost(self.subdomain)
-
-    def write_virtual_host_file(self, override_subdomain=None):
-        self.virtual_host.write_conf(override_subdomain)
-    
-    def set_content_filesystem_owner(self):
-        change_owner(self.content_path, 
-                     deployment.server_config.www_user, 
-                     deployment.server_config.www_group)
-    
-    def copy_to_content(self, source_path):
-        remove_if_exists_but_keep_backup(self.content_path)
-        shutil.copytree(source_path, 
-                        self.content_path)
-        self.set_content_filesystem_owner()
+log.message("Creating virtual host for root of domain")
+subdomain.write_virtual_host_file("")
