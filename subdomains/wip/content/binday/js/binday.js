@@ -1,5 +1,20 @@
 var g_binaryString = "";
 
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+ 
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+ 
+    return vars;
+}
+
 function binaryGroupToString(group) {
     var value = 0;
     
@@ -85,7 +100,6 @@ function messageChanged() {
     if(messageIsProbablyBinary(message)) {
         $("#binary-label").html("Translation");
         $("#binary").val(stringFromBinaryString(message));
-        $("#binary").change();
     } else {
         $("#binary-label").html("Binary");
         g_binaryString = stringToBinaryString(message);
@@ -94,8 +108,8 @@ function messageChanged() {
         } else {
             $("#binary").val(g_binaryString);
         }
-        $("#binary").change();
     }
+    $("#binary").change();
 }
 
 function canTweet() {
@@ -152,4 +166,10 @@ $(document).ready(function() {
     $("#tweet-button").click(tweetIt);
     
     $("#message").focus();
+
+	var query = getUrlVars();
+	if(query.message != null && query.message.length > 0) {
+		$("#message").val(query.message);
+		messageChanged();
+	}
 });
