@@ -34,7 +34,13 @@ import os
 #   server_config: server_config object
 #   log: log object
 log.message("Downloading latest wordpress")
-tmpdir = tempfile.mkdtemp(prefix=(server_config.full_domain_name(subdomain.subdomain) + "."))
-os.chdir(tmpdir)
-log.message("Working in temporary directory: %s" % tmpdir)
-subprocess.Popen("wget http://wordpress.org/latest.zip", shell=True).wait()
+if not os.path.exists("latest.zip"):
+    subprocess.Popen("wget http://wordpress.org/latest.zip", shell=True).wait()
+    subprocess.Popen("unzip latest.zip -d '%s'" % subdomain.content_path, shell=True).wait()
+else:
+    log.message("There's already a wordpress archive downloaded, skipping download and extract. If you want to download it again, delete '%s'" % os.path.abspath("latest.zip"))
+
+if not os.path.exists("latest.zip"):
+    subprocess.Popen("wget https://api.wordpress.org/secret-key/1.1/salt/ -O salt.txt", shell=True).wait()
+else:
+    log.message("There's already a wordpress salt file downloaded, skipping download. If you want to download it again, delete '%s'" % os.path.abspath("salt.txt"))

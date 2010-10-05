@@ -1,0 +1,21 @@
+body {
+    font-family:Arial, Verdana, Sans-serif;
+    font-size:14pt;
+    background:#97B48F;
+}
+#apology {
+	margin: 32px auto auto auto;
+	background:#E8D495;
+	color:#E87657;
+	text-align:center;
+	width:290px;
+}
+#links {
+	margin: 8px auto auto auto;
+	padding: 16px 0 16px 0;
+	background:#FFF3D2;
+	color:#E87657;
+	width:130px;
+    font-size:12pt;
+	text-align:center;
+}
