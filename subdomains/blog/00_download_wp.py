@@ -40,7 +40,7 @@ if not os.path.exists("latest.zip"):
 else:
     log.message("There's already a wordpress archive downloaded, skipping download and extract. If you want to download it again, delete '%s'" % os.path.abspath("latest.zip"))
 
-if not os.path.exists("latest.zip"):
+if not os.path.exists("salt.txt"):
     subprocess.Popen("wget https://api.wordpress.org/secret-key/1.1/salt/ -O salt.txt", shell=True).wait()
 else:
     log.message("There's already a wordpress salt file downloaded, skipping download. If you want to download it again, delete '%s'" % os.path.abspath("salt.txt"))
