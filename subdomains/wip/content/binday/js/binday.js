@@ -6,7 +6,7 @@ var BIN_DELIM = " ";
 
 function getUrlVars() {
 	var vars = [], hash;
-	var hashes = decodeURI(window.location.href).slice(window.location.href.indexOf('?') + 1).split('&');
+	var hashes = decodeURI(window.location.href.slice(window.location.href.indexOf('?') + 1)).split('&');
  
 	for(var i = 0; i < hashes.length; i++) {
 		hash = hashes[i].split('=');
