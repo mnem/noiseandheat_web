@@ -56,10 +56,9 @@ function stringFromBinaryString(binary) {
 			group = "";
 			
 			if(processedGroup && c == BIN_DELIM) {
-				// Skip adding this char as it's the group delimiter
-			} else {
-				message += c;
+				c = "";
 			}
+			message += c;
 		}
 	}
 	
@@ -73,10 +72,10 @@ function stringFromBinaryString(binary) {
 }
 
 function valueToBinaryString(value) {
-	var binary = ""
+	var binary = "";
 	
 	for(var i = 0; i < MAX_BITS_FOR_CHAR_CODE; i++) {
-		if((value & (MSB_CHAR_CODE >>> i)) != 0) {
+		if((value & (MSB_CHAR_CODE >>> i)) !== 0) {
 			binary += "1";
 		} else {
 			binary += "0";
@@ -118,8 +117,7 @@ function messageIsProbablyBinary(message) {
 			bitRun = 0;
 		}
 	}
-
-	if(maxBitRun >= MIN_BITS_TO_CONSIDER_FOR_DECODE) {
+	if(maxBitRun >= MIN_BITS_TO_CONSIDER_FOR_DECODE || bitRun > MIN_BITS_TO_CONSIDER_FOR_DECODE) {
 		return true;
 	} else {
 		return false;
@@ -140,6 +138,7 @@ function messageChanged() {
 			$("#binary").val(g_binaryString);
 		}
 	}
+	$("#in-link").attr("href", getMessageHREF(message));
 	$("#binary").change();
 }
 
@@ -163,13 +162,13 @@ function binaryChanged() {
 	$("#characters-left").html(140 - length);
 	
 	// Adjust label colour
-	$("#characters-left").removeClass("chars-ok chars-careful chars-you-were-only-supposed-to-blow-the-bloody-doors-off")
+	$("#characters-left").removeClass("chars-ok chars-careful chars-you-were-only-supposed-to-blow-the-bloody-doors-off");
 	if(length >= 130) {
-		$("#characters-left").addClass("chars-you-were-only-supposed-to-blow-the-bloody-doors-off")
+		$("#characters-left").addClass("chars-you-were-only-supposed-to-blow-the-bloody-doors-off");
 	} else if(length >= 120) {
-		$("#characters-left").addClass("chars-careful")
+		$("#characters-left").addClass("chars-careful");
 	} else {
-		$("#characters-left").addClass("chars-ok")
+		$("#characters-left").addClass("chars-ok");
 	}
 	
 	if(canTweet()) {
@@ -177,6 +176,8 @@ function binaryChanged() {
 	} else {
 		$("#tweet-button").button("option", "disabled", true);
 	}
+	
+	$("#out-link").attr("href", getMessageHREF($("#binary").val()));
 }
 
 function tweetIt() {
@@ -187,12 +188,16 @@ function tweetIt() {
 }
 
 function processUrlVars(vars) {
-	if(vars != null) {
+	if(vars !== null) {
 		if(vars.message) {
 			$("#message").val(vars.message);
 			messageChanged();
 		}
 	}
+}
+
+function getMessageHREF(message) {
+	return "?message=" + encodeURI(message);
 }
 
 $(document).ready(function() {

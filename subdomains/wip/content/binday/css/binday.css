@@ -7,17 +7,35 @@ body {
     margin: 32px auto auto auto;
     width:540px;
 }
+#in-link {
+	position:absolute;
+    margin:3px 3px 2px 12px;
+	bottom:0px;
+	left:0px;
+    font-size:10pt;
+}
+#out-link {
+	position:absolute;
+    margin:3px 3px 38px 12px;
+	bottom:0px;
+	left:0px;
+    font-size:10pt;
+}
 #message-in {
+	position:relative;
     margin:3px 3px 3px 3px;
     padding:3px 3px 3px 3px;
     width:540px;
+	height:160px;
     background:#FFCC33;
     text-align:center;
 }
 #message-out {
+	position:relative;
     margin:3px 3px 3px 3px;
     padding:3px 3px 3px 3px;
     width:540px;
+	height:195px;
     background:#98D900;
     text-align:center;
 }
@@ -26,6 +44,8 @@ body {
     font-family:Arial, Verdana, Sans-serif;
     font-size:18pt;
     width:520px;
+	height:113px;
+	background:#FEF2C0;
 }
 #binary {
     margin:3px 3px 3px 3px;
@@ -33,6 +53,8 @@ body {
     font-family:Arial, Verdana, Sans-serif;
     font-size:18pt;
     width:520px;
+	height:113px;
+    background:#F0FFBE;
 }
 .chars-ok {
     color:#999;
