@@ -7,10 +7,6 @@ body {
     margin: 32px auto auto auto;
     width:540px;
 }
-#flattr-div {
-    margin: 16px auto auto auto;
-    width:200px;
-}
 #in-link {
 	position:absolute;
     margin:3px 3px 2px 12px;
