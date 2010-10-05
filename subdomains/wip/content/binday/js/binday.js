@@ -7,7 +7,6 @@ var BIN_DELIM = " ";
 function getUrlVars() {
 	var vars = [], hash;
 	var query = decodeURI(window.location.href.slice(window.location.href.indexOf('?') + 1));
-	console.log("query: " + query);
 	var hashes = query.split('&');
  
 	for(var i = 0; i < hashes.length; i++) {
@@ -190,7 +189,7 @@ function tweetIt() {
 function processUrlVars(vars) {
 	if(vars != null) {
 		if(vars.message) {
-			$("#message").val(query.message);
+			$("#message").val(vars.message);
 			messageChanged();
 		}
 	}
