@@ -125,26 +125,26 @@ function messageIsProbablyBinary(message) {
 }
 
 function messageChanged() {
-	message = $("#message").val();
+	message = $("#message-text").val();
 	if(messageIsProbablyBinary(message)) {
 		$("#binary-label").html("Translation");
-		$("#binary").val(stringFromBinaryString(message));
+		$("#binary-text").val(stringFromBinaryString(message));
 	} else {
 		$("#binary-label").html("Binary");
 		g_binaryString = stringToBinaryString(message);
 		if(g_binaryString.length > 0) {
-			$("#binary").val(g_binaryString + "#binday");
+			$("#binary-text").val(g_binaryString + "#binday");
 		} else {
-			$("#binary").val(g_binaryString);
+			$("#binary-text").val(g_binaryString);
 		}
 	}
 	$("#in-link").attr("href", getMessageHREF(message));
-	$("#binary").change();
+	$("#binary-text").change();
 }
 
 function canTweet() {
-	var length = $("#binary").val().length;
-	var message = $("#message").val();
+	var length = $("#binary-text").val().length;
+	var message = $("#message-text").val();
 	
 	if(length > 140 || length <= 0) {
 		return false;
@@ -157,7 +157,7 @@ function canTweet() {
 }
 
 function binaryChanged() {
-	var length = $("#binary").val().length;
+	var length = $("#binary-text").val().length;
 	
 	$("#characters-left").html(140 - length);
 	
@@ -177,7 +177,7 @@ function binaryChanged() {
 		$("#tweet-button").button("option", "disabled", true);
 	}
 	
-	$("#out-link").attr("href", getMessageHREF($("#binary").val()));
+	$("#out-link").attr("href", getMessageHREF($("#binary-text").val()));
 }
 
 function tweetIt() {
@@ -190,7 +190,7 @@ function tweetIt() {
 function processUrlVars(vars) {
 	if(vars !== null) {
 		if(vars.message) {
-			$("#message").val(vars.message);
+			$("#message-text").val(vars.message);
 			messageChanged();
 		}
 	}
@@ -201,16 +201,16 @@ function getMessageHREF(message) {
 }
 
 $(document).ready(function() {
-	$("#message").keypress(messageChanged);
-	$("#message").keydown(messageChanged);
-	$("#message").keyup(messageChanged);
+	$("#message-text").keypress(messageChanged);
+	$("#message-text").keydown(messageChanged);
+	$("#message-text").keyup(messageChanged);
 
-	$("#binary").change(binaryChanged);
+	$("#binary-text").change(binaryChanged);
 
 	$("#tweet-button").button({disabled:true});
 	$("#tweet-button").click(tweetIt);
 	
-	$("#message").focus();
+	$("#message-text").focus();
 
 	processUrlVars(getUrlVars());
 });
