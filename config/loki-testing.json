@@ -5,5 +5,6 @@
     "htdocs_root" : "/Users/dave/Sites/noiseandheat.com/content",
     "virtual_hosts_conf_root" : "/Users/dave/Sites/noiseandheat.com/vhosts.d",
     "www_user" : "dave",
-    "www_group"  : "staff"
+    "www_group"  : "staff",
+    "skip_restart" : "true"
 }
