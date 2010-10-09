@@ -46,8 +46,9 @@ class Subdomain(object):
                      deployment.server_config.www_user, 
                      deployment.server_config.www_group)
     
-    def copy_to_content(self, source_path):
+    def copy_to_content(self, source_path, ignore=None):
         remove_if_exists_but_keep_backup(self.content_path)
         shutil.copytree(source_path, 
-                        self.content_path)
+                        self.content_path,
+                        ignore)
         self.set_content_filesystem_owner()

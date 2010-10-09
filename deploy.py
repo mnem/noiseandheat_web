@@ -54,17 +54,23 @@ def deploy_subdomain(subdomain_config_root, subdomain):
     if os.path.isdir(subdomain_config_root):
         s = Subdomain(subdomain)
         s.write_virtual_host_file()
-        s.copy_to_content(os.path.join(subdomain_config_root, "content"))
+        ignore = read_ignore_patterns_and_create_ignore_function(os.path.join(subdomain_config_root, ".contentignore"))
+        s.copy_to_content(os.path.join(subdomain_config_root, "content"), ignore)
         for custom_step in glob.glob(os.path.join(subdomain_config_root, "*.py")):
             run_script(custom_step, subdomain=s)
     else:
         deployment.log.message("Skipping %s because %s is not a directory" % (subdomain, subdomain_config_root))
 
-def deploy_subdomains(subdomains_directory, subdomains):
+def read_ignore_patterns_and_create_ignore_function(filename):
+    """Doesn't actually read a file yet, I'm faking it"""
+    # TODO: Actually read and process the ignore file
+    return ignore_patterns('*.pyc', '*~', '.git')
+
+def deploy_subdomains(subdomains_directory, subdomains, skip_before, skip_after):
     before_deploy_script = os.path.join(subdomains_directory, "before_deploy.py")
     after_deploy_script = os.path.join(subdomains_directory, "after_deploy.py")
     
-    if os.path.exists(before_deploy_script):
+    if not skip_before and os.path.exists(before_deploy_script):
         run_script(before_deploy_script)
     
     for subdomain in subdomains:
@@ -72,13 +78,15 @@ def deploy_subdomains(subdomains_directory, subdomains):
         if os.path.isdir(full_subdomain_path):
             deploy_subdomain(full_subdomain_path, subdomain)
             
-    if os.path.exists(after_deploy_script):
+    if not skip_after and os.path.exists(after_deploy_script):
         run_script(after_deploy_script)
     
 def main():
     """Main entry point"""
     op = OptionParser("usage: %prog [options] config_json <subdomains>")
     op.add_option("-v", "--verbose", default=False, action="store_true", help="Enable verbose output. [%default]")
+    op.add_option("-B", "--skip_before", default=False, action="store_true", help="Skips the before_deploy.py script. [%default]")
+    op.add_option("-A", "--skip_after", default=False, action="store_true", help="Skips the before_deploy.py script. [%default]")
     opts, args = op.parse_args()
 
     if opts.verbose:
@@ -113,7 +121,7 @@ def main():
     else:
         subdomain_list = args[1:]
         deployment.log.message("Deploying subdomains %s" % str(subdomain_list))
-    deploy_subdomains(domains_directory, subdomain_list)
+    deploy_subdomains(domains_directory, subdomain_list, opts.skip_before, opts.skip_after)
 
 if __name__ == '__main__':
     main()
