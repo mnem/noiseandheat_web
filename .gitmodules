@@ -1,3 +1,3 @@
-[submodule "subdomains/binday/content"]
-	path = subdomains/binday/content
+[submodule "subdomains/binary/content"]
+	path = subdomains/binary/content
 	url = git://github.com/mnem/binary_day.git
