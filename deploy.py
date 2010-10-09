@@ -30,6 +30,7 @@ import os
 import glob
 import json
 from optparse import OptionParser
+from shutil import ignore_patterns
 
 import deployment
 from deployment.subdomain import Subdomain

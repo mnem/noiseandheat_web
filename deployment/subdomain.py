@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-import shutil
+from shutil import copytree
 
 import deployment
 from deployment.utils import change_owner, remove_if_exists_but_keep_backup, ensure_directory_exists
@@ -48,7 +48,7 @@ class Subdomain(object):
     
     def copy_to_content(self, source_path, ignore=None):
         remove_if_exists_but_keep_backup(self.content_path)
-        shutil.copytree(source_path, 
-                        self.content_path,
-                        ignore)
+        copytree(source_path, 
+                 self.content_path,
+                 ignore)
         self.set_content_filesystem_owner()
