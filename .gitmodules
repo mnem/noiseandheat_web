@@ -1,9 +1,3 @@
 [submodule "subdomains/binary/content"]
 	path = subdomains/binary/content
 	url = git://github.com/mnem/binary_day.git
-[submodule "subdomains/wip/content/binary_day_a"]
-	path = subdomains/wip/content/binary_day_a
-	url = git://github.com/mnem/binary_day.git
-[submodule "subdomains/wip/content/binary_day_b"]
-	path = subdomains/wip/content/binary_day_b
-	url = git://github.com/mnem/binary_day.git
