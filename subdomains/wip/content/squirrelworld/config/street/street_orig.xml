@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<area>
+    <projection type="isometric" angle="10" ></projection>
+    <region id="base" imin="-290" imax="790" jmin="-290" jmax="790"
+        maxd="461" mind="-461" mins="-114" maxs="1105" />
+
+    <backgroundLayer>
+        <!--  <swf id="viewportBoundaries" path="assets/rome/basement/basementViewportBoundaries.swf" i="0" j="0" /> -->
+        <swf id="floor" path="assets/street/background.swf" i="-3" j="-4" />
+        <!-- <swf id="walls" path="assets/rome/basement/walls.swf" i="0" j="0" /> -->
+    </backgroundLayer>
+
+    <foregroundLayer>
+        <!-- <swf id="shadows_and_chains" path="assets/rome/basement/shadows_and_chains.swf" i="0" j="-5" /> -->
+    </foregroundLayer>
+
+    <spawnpoints>
+        <spawnpoint referrer="not used yet"
+                imin="561" imax="611" jmin="220" jmax="288" mind="0" maxd="0" mins="0" maxs="0"/>
+    </spawnpoints>
+
+    <hotspots>
+    </hotspots>
+
+    <solids>
+        <cuboid id="1" imin="-155" imax="488" jmin="203" jmax="299" kmin="0" kmax="400">
+            <swf id="1" path="assets/street/Car1.swf" i="7" j="5"/>
+        </cuboid>
+    </solids>
+
+    <unwalkableAreas>
+
+    </unwalkableAreas>
+</area>
+
