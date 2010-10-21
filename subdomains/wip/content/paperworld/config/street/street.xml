@@ -6,7 +6,7 @@
   <projection type="isometric" angle="10"/>
   <region id="base" imin="0" imax="3550" jmin="0" jmax="3550" mins="1218" maxs="5850" mind="-1218" maxd="1218"/>
   <backgroundLayer>
-    <swf path="assets/street/Background.swf" id="floor" i="-798" j="-464"/>
+    <swf path="assets/street/background.swf" id="floor" i="-798" j="-464"/>
     <swf path="assets/street/viewPortBounds.swf" id="viewportBoundaries" i="-800" j="-460"/>
   </backgroundLayer>
   <solids>
