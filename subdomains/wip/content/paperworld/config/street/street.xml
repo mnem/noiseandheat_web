@@ -6,7 +6,7 @@
     <swf path="assets/street/squirrelator.swf" id="squirrelator" i="0" j="0"/>
 
     <!-- Background assets -->
-    <swf path="assets/street/Background.swf" id="floor" i="-798" j="-464"/>
+    <swf path="assets/street/background.jpg" id="floor" i="-798" j="-464"/>
     <swf path="assets/street/viewPortBounds.swf" id="viewportBoundaries" i="-800" j="-460"/>
   </backgroundLayer>
   <spawnpoints>
@@ -24,7 +24,7 @@
 
   <solids>
     <cuboid id="subway" imin="1064" imax="1256" jmin="2033" jmax="2285" kmin="0" kmax="1">
-      <swf path="assets/street/Subway.swf" id="" i="353" j="585"/>
+      <swf path="assets/street/subway.png" id="" i="353" j="585"/>
     </cuboid>
     <cuboid id="manhole" imin="1570" imax="1611" jmin="2414" jmax="2454" kmin="0" kmax="1">
       <swf path="assets/street/ManholeAnim.swf" id="" i="70" j="120" autoAnimate="false"/>
@@ -33,43 +33,43 @@
       <swf path="assets/street/Fountain.swf" id="" i="750" j="1019"/>
     </cuboid>
     <cuboid id="sign" imin="1363" imax="1389" jmin="1879" jmax="1904" kmin="0" kmax="1">
-      <swf path="assets/street/StreetSign.swf" id="" i="1250" j="1362"/>
+      <swf path="assets/street/streetsign.png" id="" i="1250" j="1362"/>
     </cuboid>
     <cuboid id="tree" imin="2048" imax="2059" jmin="1360" jmax="1390" kmin="0" kmax="1">
-      <swf path="assets/street/Tree.swf" id="" i="1065" j="1220"/>
+      <swf path="assets/street/tree.png" id="" i="1065" j="1220"/>
     </cuboid>
     <cuboid id="lamp6" imin="1778" imax="1799" jmin="2932" jmax="2980" kmin="0" kmax="1">
-      <swf path="assets/street/Lamppost1.swf" id="" i="530" j="595"/>
+      <swf path="assets/street/lamppost1.png" id="" i="530" j="595"/>
     </cuboid>
     <cuboid id="car1" imin="2079" imax="2198" jmin="2297" jmax="2396" kmin="0" kmax="1">
-      <swf path="assets/street/Car1.swf" id="" i="265" j="420"/>
+      <swf path="assets/street/Car1.swf" id="" i="265" j="420" autoAnimate="false"/>
     </cuboid>
     <cuboid id="car2" imin="2314" imax="2452" jmin="2269" jmax="2367" kmin="0" kmax="1">
-      <swf path="assets/street/Car2.swf" id="" i="320" j="470"/>
+      <swf path="assets/street/Car2.swf" id="" i="320" j="470" autoAnimate="false"/>
     </cuboid>
     <cuboid id="car3" imin="2508" imax="2728" jmin="2265" jmax="2362" kmin="0" kmax="1">
-      <swf path="assets/street/Car3.swf" id="" i="295" j="460"/>
+      <swf path="assets/street/Car3.swf" id="" i="295" j="460" autoAnimate="false"/>
     </cuboid>
     <cuboid id="box" imin="3132" imax="3186" jmin="2291" jmax="2341" kmin="0" kmax="1">
-      <swf path="assets/street/Postbox.swf" id="" i="175" j="230"/>
+      <swf path="assets/street/postbox.png" id="" i="175" j="230"/>
     </cuboid>
     <cuboid id="lamp8" imin="3238" imax="3252" jmin="2111" jmax="2154" kmin="0" kmax="1">
-      <swf path="assets/street/Lamppost3.swf" id="" i="220" j="275"/>
+      <swf path="assets/street/lamppost3.png" id="" i="220" j="275"/>
     </cuboid>
     <cuboid id="fence1" imin="1426" imax="1497" jmin="203" jmax="1542" kmin="0" kmax="1">
-      <swf path="assets/street/FenceFront.swf" id="" i="195" j="1495"/>
+      <swf path="assets/street/fencefront.png" id="" i="195" j="1495"/>
     </cuboid>
     <cuboid id="wall_top" imin="1452" imax="2668" jmin="1691" jmax="1708" kmin="0" kmax="1">
-      <swf path="assets/street/FenceLeft.swf" id="" i="790" j="810"/>
+      <swf path="assets/street/fenceleft.png" id="" i="790" j="810"/>
     </cuboid>
     <cuboid id="wall_bac" imin="2652" imax="2667" jmin="1409" jmax="1701" kmin="0" kmax="1">
-      <swf path="assets/street/FenceRight.swf" id="" i="215" j="470"/>
+      <swf path="assets/street/fenceright.png" id="" i="215" j="470"/>
     </cuboid>
     <cuboid id="pond" imin="1928" imax="2217" jmin="830" jmax="1122" kmin="0" kmax="1">
       <swf path="assets/street/Pond.swf" id="" i="225" j="525"/>
     </cuboid>
     <cuboid id="lamp1" imin="1834" imax="1866" jmin="1883" jmax="1911" kmin="0" kmax="1">
-      <swf path="assets/street/Lamppost2.swf" id="" i="1245" j="1295"/>
+      <swf path="assets/street/lamppost2.png" id="" i="1245" j="1295"/>
     </cuboid>
     <cuboid id="pigeon3" imin="1382" imax="1398" jmin="381" jmax="397" kmin="0" kmax="1">
       <swf path="assets/street/Pigeon3.swf" id="" i="100" j="115"/>
