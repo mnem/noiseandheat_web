@@ -8,6 +8,9 @@
     <!-- Background assets -->
     <swf path="assets/street/background.swf" id="floor" i="-798" j="-464"/>
     <swf path="assets/street/viewPortBounds.swf" id="viewportBoundaries" i="-800" j="-460"/>
+
+    <!-- Cheekily preload the squirrel -->
+    <swf path="assets/avatar/template/npc/squirrel.swf" id="squirrel" i="-798" j="-464"/>
   </backgroundLayer>
   <spawnpoints>
        <spawnpoint referrer="not used yet"

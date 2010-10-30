@@ -476,8 +476,8 @@
       <dep id="trace" />
       <dep id="it.gotoandplay.smartfoxserver.util:ObjectSerializer" />
       <dep id="flash.utils:getTimer" />
-      <dep id="it.gotoandplay.smartfoxserver.data:User" />
       <dep id="XML" />
+      <dep id="it.gotoandplay.smartfoxserver.data:User" />
       <dep id="XMLList" />
       <dep id="it.gotoandplay.smartfoxserver:SFSEvent" />
     </script>
