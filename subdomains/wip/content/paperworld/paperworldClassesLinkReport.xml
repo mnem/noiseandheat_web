@@ -1,0 +1,760 @@
+<report>
+  <scripts>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ObjectTween)" mod="1232396566000" size="2172" optimizedsize="994">
+      <def id="com.flashdynamix.motion.plugins:ObjectTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="Math" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/debug/_logger.as" mod="1287605825000" size="277" optimizedsize="80">
+      <def id="lib.debug:_logger" />
+      <dep id="lib.debug:VanillaLogger" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSONTokenizer.as" mod="1287605822000" size="5398" optimizedsize="3203">
+      <def id="com.adobe.serialization.json:JSONTokenizer" />
+      <pre id="Object" />
+      <dep id="com.adobe.serialization.json:JSONParseError" />
+      <dep id="AS3" />
+      <dep id="com.adobe.serialization.json:JSONToken" />
+      <dep id="com.adobe.serialization.json:JSONTokenType" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/debug/setVanillaLogger.as" mod="1287605825000" size="928" optimizedsize="576">
+      <def id="lib.debug:setVanillaLogger" />
+      <dep id="lib.debug:VanillaLogger" />
+      <dep id="String" />
+      <dep id="AS3" />
+      <dep id="trace" />
+      <dep id="Function" />
+      <dep id="lib.debug:_logger" />
+      <dep id="lib.debug:SimpleBufferedLogger" />
+      <dep id="flash.system:ApplicationDomain" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MatrixTween)" mod="1232241728000" size="3297" optimizedsize="1734">
+      <def id="com.flashdynamix.motion.plugins:MatrixTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/as3-signals/src/org/osflash/signals/ISignal.as" mod="1287605821000" size="975" optimizedsize="272">
+      <def id="org.osflash.signals:ISignal" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientRoom.as" mod="1287605825000" size="3046" optimizedsize="1348">
+      <def id="lib.smartfox.modules:SmartfoxClientRoom" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientRoom" />
+      <pre id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <dep id="it.gotoandplay.smartfoxserver.data:Room" />
+      <dep id="AS3" />
+      <dep id="Error" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:ColorTween)" mod="1232241670000" size="3525" optimizedsize="1952">
+      <def id="com.flashdynamix.motion.plugins:ColorTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.geom:ColorTransform" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/debug/SimpleBufferedLogger.as" mod="1287605825000" size="3639" optimizedsize="1801">
+      <def id="lib.debug:SimpleBufferedLogger" />
+      <pre id="lib.debug:VanillaLogger" />
+      <pre id="Object" />
+      <dep id="org.osflash.signals:Signal" />
+      <dep id="AS3" />
+      <dep id="trace" />
+      <dep id="__AS3__.vec:Vector" />
+      <dep id="lib.debug:DebugMessage" />
+      <dep id="org.osflash.signals:ISignal" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/http/HttpEvent.as" mod="1287605822000" size="1216" optimizedsize="532">
+      <def id="it.gotoandplay.smartfoxserver.http:HttpEvent" />
+      <pre id="flash.events:Event" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/ModuleStacksController.as" mod="1287605825000" size="2916" optimizedsize="1548">
+      <def id="client.modules:ModuleStacksController" />
+      <pre id="client.modules:IModuleStacksController" />
+      <pre id="Object" />
+      <dep id="client.modules.transitions:ITransition" />
+      <dep id="org.osflash.signals:Signal" />
+      <dep id="AS3" />
+      <dep id="client.modules:IModuleStack" />
+      <dep id="__AS3__.vec:Vector" />
+      <dep id="client.commands:CommandsRegister" />
+      <dep id="Error" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientBuddyList.as" mod="1287605825000" size="2680" optimizedsize="1142">
+      <def id="lib.smartfox.modules:SmartfoxClientBuddyList" />
+      <pre id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientBuddyList" />
+      <dep id="AS3" />
+      <dep id="Error" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/IModuleStacksController.as" mod="1287605825000" size="743" optimizedsize="231">
+      <def id="client.modules:IModuleStacksController" />
+      <pre id="Object" />
+      <dep id="client.modules:IModuleStack" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSONTokenType.as" mod="1287605822000" size="1075" optimizedsize="505">
+      <def id="com.adobe.serialization.json:JSONTokenType" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSONToken.as" mod="1287605822000" size="1079" optimizedsize="369">
+      <def id="com.adobe.serialization.json:JSONToken" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/data/User.as" mod="1287605822000" size="2375" optimizedsize="925">
+      <def id="it.gotoandplay.smartfoxserver.data:User" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:AbstractTween)" mod="1232396421000" size="4836" optimizedsize="2033">
+      <def id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
+      <dep id="AS3" />
+      <dep id="Math" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/src/PaperWorldClient.as" mod="1288451811000" size="3211" optimizedsize="2142">
+      <def id="PaperWorldClient" />
+      <pre id="client.VanillaWorld:VanillaWorldApp" />
+      <dep id="flash.display:StageScaleMode" />
+      <dep id="flash.geom:Rectangle" />
+      <dep id="flash.display:StageDisplayState" />
+      <dep id="flash.ui:ContextMenu" />
+      <dep id="flash.ui:ContextMenuItem" />
+      <dep id="lib.debug:getVanillaLogger" />
+      <dep id="com.flashdynamix.utils:SWFProfiler" />
+      <dep id="flash.events:ContextMenuEvent" />
+      <dep id="AS3" />
+      <dep id="AppModule" />
+      <dep id="client.VanillaWorld:VanillaWorldModuleStack" />
+      <dep id="AppModuleStacksController" />
+      <dep id="flash.display:StageAlign" />
+      <dep id="AppModuleStacks" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/debug/VanillaLogger.as" mod="1287605825000" size="1482" optimizedsize="516">
+      <def id="lib.debug:VanillaLogger" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="__AS3__.vec:Vector" />
+      <dep id="lib.debug:DebugMessage" />
+      <dep id="org.osflash.signals:ISignal" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/SmartFoxClient.as" mod="1287605822000" size="27570" optimizedsize="14396">
+      <def id="it.gotoandplay.smartfoxserver:SmartFoxClient" />
+      <pre id="flash.events:EventDispatcher" />
+      <dep id="flash.events:Event" />
+      <dep id="it.gotoandplay.smartfoxserver.data:Room" />
+      <dep id="flash.utils:ByteArray" />
+      <dep id="it.gotoandplay.smartfoxserver.util:ObjectSerializer" />
+      <dep id="AS3" />
+      <dep id="it.gotoandplay.smartfoxserver.handlers:ExtHandler" />
+      <dep id="it.gotoandplay.smartfoxserver.handlers:SysHandler" />
+      <dep id="flash.net:URLLoader" />
+      <dep id="flash.net:FileReference" />
+      <dep id="it.gotoandplay.smartfoxserver.handlers:IMessageHandler" />
+      <dep id="flash.events:ErrorEvent" />
+      <dep id="it.gotoandplay.smartfoxserver.util:Entities" />
+      <dep id="flash.net:URLRequest" />
+      <dep id="com.adobe.serialization.json:JSON" />
+      <dep id="flash.net:Socket" />
+      <dep id="trace" />
+      <dep id="flash.events:IOErrorEvent" />
+      <dep id="flash.utils:getTimer" />
+      <dep id="flash.events:SecurityErrorEvent" />
+      <dep id="it.gotoandplay.smartfoxserver:SFSEvent" />
+      <dep id="flash.utils:setTimeout" />
+      <dep id="it.gotoandplay.smartfoxserver.http:HttpConnection" />
+      <dep id="flash.events:ProgressEvent" />
+      <dep id="XML" />
+      <dep id="it.gotoandplay.smartfoxserver.data:User" />
+      <dep id="it.gotoandplay.smartfoxserver.http:HttpEvent" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:MovieClipTween)" mod="1232241384000" size="3530" optimizedsize="1917">
+      <def id="com.flashdynamix.motion.plugins:MovieClipTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="Math" />
+      <dep id="flash.display:MovieClip" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/ModuleStack.as" mod="1288292700000" size="12714" optimizedsize="6653">
+      <def id="client.modules:ModuleStack" />
+      <pre id="client.modules:IModuleStack" />
+      <pre id="Object" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.system:System" />
+      <dep id="org.osflash.signals:Signal" />
+      <dep id="trace" />
+      <dep id="client.modules:IModule" />
+      <dep id="client.commands:CommandsRegister" />
+      <dep id="lib.primitive.map:HashMap" />
+      <dep id="flash.events:IOErrorEvent" />
+      <dep id="Error" />
+      <dep id="lib.debug:getVanillaLogger" />
+      <dep id="client.modules.transitions:ITransition" />
+      <dep id="AS3" />
+      <dep id="org.osflash.signals:ISignal" />
+      <dep id="client.modules:ModuleLoader" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/src/AppModule.as" mod="1288292666000" size="780" optimizedsize="460">
+      <def id="AppModule" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/SFSEvent.as" mod="1287605822000" size="2701" optimizedsize="1473">
+      <def id="it.gotoandplay.smartfoxserver:SFSEvent" />
+      <pre id="flash.events:Event" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSONEncoder.as" mod="1287605822000" size="2912" optimizedsize="1719">
+      <def id="com.adobe.serialization.json:JSONEncoder" />
+      <pre id="Object" />
+      <dep id="flash.utils:describeType" />
+      <dep id="AS3" />
+      <dep id="XML" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientAbstract.as" mod="1287605825000" size="721" optimizedsize="287">
+      <def id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="flash.events:IEventDispatcher" />
+      <pre id="Object" />
+      <dep id="it.gotoandplay.smartfoxserver:SmartFoxClient" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/http/HttpConnection.as" mod="1287605822000" size="3408" optimizedsize="1894">
+      <def id="it.gotoandplay.smartfoxserver.http:HttpConnection" />
+      <pre id="flash.events:EventDispatcher" />
+      <dep id="flash.net:URLRequestMethod" />
+      <dep id="flash.events:Event" />
+      <dep id="it.gotoandplay.smartfoxserver.http:IHttpProtocolCodec" />
+      <dep id="it.gotoandplay.smartfoxserver.http:RawProtocolCodec" />
+      <dep id="flash.net:URLRequest" />
+      <dep id="AS3" />
+      <dep id="trace" />
+      <dep id="flash.net:URLVariables" />
+      <dep id="flash.events:IOErrorEvent" />
+      <dep id="flash.net:URLLoader" />
+      <dep id="it.gotoandplay.smartfoxserver.http:LoaderFactory" />
+      <dep id="it.gotoandplay.smartfoxserver.http:HttpEvent" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/VanillaWorld/VanillaWorldApp.as" mod="1287605825000" size="1757" optimizedsize="913">
+      <def id="client.VanillaWorld:VanillaWorldApp" />
+      <pre id="flash.display:Sprite" />
+      <dep id="lib.smartfox.client:SmartfoxClientWrapper" />
+      <dep id="flash.events:Event" />
+      <dep id="client.modules:ModuleStacksController" />
+      <dep id="AS3" />
+      <dep id="client.commands:CommandsRegister" />
+      <dep id="client.modules:IModuleStacksController" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/client/SmartfoxClientWrapper.as" mod="1287605825000" size="3075" optimizedsize="1523">
+      <def id="lib.smartfox.client:SmartfoxClientWrapper" />
+      <pre id="lib.smartfox:ISmartfoxClient" />
+      <pre id="Object" />
+      <dep id="lib.smartfox.modules:SmartfoxClientUser" />
+      <dep id="it.gotoandplay.smartfoxserver:SmartFoxClient" />
+      <dep id="lib.smartfox.modules:SmartfoxClientRoom" />
+      <dep id="lib.smartfox.modules:SmartfoxClientMessaging" />
+      <dep id="lib.smartfox.modules:SmartfoxClientConnection" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientConfig" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientUser" />
+      <dep id="lib.smartfox.modules:SmartfoxClientBuddyList" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientConnection" />
+      <dep id="AS3" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientRoom" />
+      <dep id="lib.smartfox.modules:SmartfoxClientConfig" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientBuddyList" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientMessaging" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/src/AppModuleStacks.as" mod="1288292666000" size="501" optimizedsize="225">
+      <def id="AppModuleStacks" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/debug/DebugMessage.as" mod="1287605825000" size="4204" optimizedsize="2554">
+      <def id="lib.debug:DebugMessage" />
+      <pre id="Object" />
+      <dep id="Date" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/as3-signals/src/org/osflash/signals/IDispatcher.as" mod="1287605821000" size="586" optimizedsize="176">
+      <def id="org.osflash.signals:IDispatcher" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/ModuleLoader.as" mod="1287605825000" size="1814" optimizedsize="986">
+      <def id="client.modules:ModuleLoader" />
+      <pre id="Object" />
+      <dep id="flash.events:Event" />
+      <dep id="org.osflash.signals:Signal" />
+      <dep id="flash.net:URLRequest" />
+      <dep id="AS3" />
+      <dep id="client.modules:IModule" />
+      <dep id="flash.events:IOErrorEvent" />
+      <dep id="org.osflash.signals:ISignal" />
+      <dep id="flash.display:Loader" />
+      <dep id="flash.system:ApplicationDomain" />
+      <dep id="flash.system:LoaderContext" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/profiling/SWFProfiler/com/flashdynamix/utils/SWFProfiler.as" mod="1287605822000" size="8013" optimizedsize="4399">
+      <def id="com.flashdynamix.utils:SWFProfiler" />
+      <pre id="Object" />
+      <pre id="flash.display:Sprite" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.text:TextFieldAutoSize" />
+      <dep id="flash.system:System" />
+      <dep id="flash.net:LocalConnection" />
+      <dep id="flash.display:InteractiveObject" />
+      <dep id="Math" />
+      <dep id="flash.ui:ContextMenu" />
+      <dep id="flash.utils:getTimer" />
+      <dep id="flash.ui:ContextMenuItem" />
+      <dep id="Error" />
+      <dep id="flash.display:Shape" />
+      <dep id="flash.events:EventDispatcher" />
+      <dep id="flash.display:Graphics" />
+      <dep id="flash.events:ContextMenuEvent" />
+      <dep id="flash.text:TextFormat" />
+      <dep id="AS3" />
+      <dep id="flash.text:TextField" />
+      <dep id="flash.display:Stage" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientConnection.as" mod="1287605825000" size="1950" optimizedsize="778">
+      <def id="lib.smartfox.modules:SmartfoxClientConnection" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientConnection" />
+      <pre id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <dep id="AS3" />
+      <dep id="Error" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSONDecoder.as" mod="1287605822000" size="2431" optimizedsize="1384">
+      <def id="com.adobe.serialization.json:JSONDecoder" />
+      <pre id="Object" />
+      <dep id="com.adobe.serialization.json:JSONTokenizer" />
+      <dep id="com.adobe.serialization.json:JSONToken" />
+      <dep id="AS3" />
+      <dep id="com.adobe.serialization.json:JSONTokenType" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientMessaging.as" mod="1287605825000" size="1603" optimizedsize="466">
+      <def id="lib.smartfox.modules:ISmartfoxClientMessaging" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyTimeline)" mod="1232368084000" size="9514" optimizedsize="4448">
+      <def id="com.flashdynamix.motion:TweensyTimeline" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion:TweensyGroup)" mod="1232371238000" size="11101" optimizedsize="5460">
+      <def id="com.flashdynamix.motion:TweensyGroup" />
+      <pre id="Object" />
+      <dep id="flash.events:Event" />
+      <dep id="com.flashdynamix.utils:ObjectPool" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="flash.utils:getTimer" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
+      <dep id="flash.utils:getQualifiedClassName" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="flash.media:SoundChannel" />
+      <dep id="AS3" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.geom:ColorTransform" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="flash.display:Sprite" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/VanillaWorld/VanillaWorldModuleStack.as" mod="1287605825000" size="1074" optimizedsize="516">
+      <def id="client.VanillaWorld:VanillaWorldModuleStack" />
+      <pre id="client.modules:ModuleStack" />
+      <dep id="lib.smartfox.client:SmartfoxClientWrapper" />
+      <dep id="client.VanillaWorld:IVanillaWorldModule" />
+      <dep id="AS3" />
+      <dep id="client.modules:IModule" />
+      <dep id="client.commands:CommandsRegister" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientConnection.as" mod="1287605825000" size="1896" optimizedsize="430">
+      <def id="lib.smartfox.modules:ISmartfoxClientConnection" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion:Tweensy)" mod="1232275685000" size="3660" optimizedsize="1453">
+      <def id="com.flashdynamix.motion:Tweensy" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:TweensyTimeline" />
+      <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/src/AppModuleStacksController.as" mod="1288292666000" size="1475" optimizedsize="833">
+      <def id="AppModuleStacksController" />
+      <pre id="client.modules:ModuleStacksController" />
+      <dep id="client.modules.transitions:ITransition" />
+      <dep id="org.osflash.signals:Signal" />
+      <dep id="client.modules:IModuleStack" />
+      <dep id="AS3" />
+      <dep id="AppModule" />
+      <dep id="client.commands:CommandsRegister" />
+      <dep id="client.modules.transitions:CrossFade" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/transitions/CrossFade.as" mod="1287605825000" size="2359" optimizedsize="1151">
+      <def id="client.modules.transitions:CrossFade" />
+      <pre id="client.modules.transitions:ITransition" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion:Tweensy" />
+      <dep id="org.osflash.signals:Signal" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="org.osflash.signals:ISignal" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/VanillaWorld/IVanillaWorldModule.as" mod="1287605825000" size="699" optimizedsize="277">
+      <def id="client.VanillaWorld:IVanillaWorldModule" />
+      <pre id="client.modules:IModule" />
+      <pre id="Object" />
+      <dep id="lib.smartfox.client:SmartfoxClientWrapper" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/IModule.as" mod="1287605825000" size="2033" optimizedsize="629">
+      <def id="client.modules:IModule" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObjectContainer" />
+      <dep id="client.commands:CommandsRegister" />
+      <dep id="org.osflash.signals:ISignal" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.utils:ObjectPool)" mod="1232273744000" size="1405" optimizedsize="725">
+      <def id="com.flashdynamix.utils:ObjectPool" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSONParseError.as" mod="1287605822000" size="974" optimizedsize="366">
+      <def id="com.adobe.serialization.json:JSONParseError" />
+      <pre id="Error" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientBuddyList.as" mod="1287605825000" size="2259" optimizedsize="555">
+      <def id="lib.smartfox.modules:ISmartfoxClientBuddyList" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/data/Room.as" mod="1287605822000" size="4495" optimizedsize="1808">
+      <def id="it.gotoandplay.smartfoxserver.data:Room" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="it.gotoandplay.smartfoxserver.data:User" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/transitions/ITransition.as" mod="1287605825000" size="1203" optimizedsize="352">
+      <def id="client.modules.transitions:ITransition" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="org.osflash.signals:ISignal" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/handlers/SysHandler.as" mod="1287605822000" size="16765" optimizedsize="9310">
+      <def id="it.gotoandplay.smartfoxserver.handlers:SysHandler" />
+      <pre id="it.gotoandplay.smartfoxserver.handlers:IMessageHandler" />
+      <pre id="Object" />
+      <dep id="it.gotoandplay.smartfoxserver.data:Room" />
+      <dep id="it.gotoandplay.smartfoxserver:SmartFoxClient" />
+      <dep id="it.gotoandplay.smartfoxserver.util:Entities" />
+      <dep id="AS3" />
+      <dep id="trace" />
+      <dep id="it.gotoandplay.smartfoxserver.util:ObjectSerializer" />
+      <dep id="flash.utils:getTimer" />
+      <dep id="it.gotoandplay.smartfoxserver.data:User" />
+      <dep id="XML" />
+      <dep id="XMLList" />
+      <dep id="it.gotoandplay.smartfoxserver:SFSEvent" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/util/ObjectSerializer.as" mod="1287605822000" size="3227" optimizedsize="1643">
+      <def id="it.gotoandplay.smartfoxserver.util:ObjectSerializer" />
+      <pre id="Object" />
+      <dep id="it.gotoandplay.smartfoxserver.util:Entities" />
+      <dep id="AS3" />
+      <dep id="XML" />
+      <dep id="XMLList" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/commands/CommandsRegister.as" mod="1287605825000" size="2276" optimizedsize="1287">
+      <def id="client.commands:CommandsRegister" />
+      <pre id="Object" />
+      <dep id="org.osflash.signals:IDispatcher" />
+      <dep id="TypeError" />
+      <dep id="AS3" />
+      <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/as3-signals/src/org/osflash/signals/Signal.as" mod="1287605821000" size="3516" optimizedsize="2160">
+      <def id="org.osflash.signals:Signal" />
+      <pre id="org.osflash.signals:IDispatcher" />
+      <pre id="org.osflash.signals:ISignal" />
+      <pre id="Object" />
+      <dep id="flash.errors:IllegalOperationError" />
+      <dep id="ArgumentError" />
+      <dep id="AS3" />
+      <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/corelib/src/com/adobe/serialization/json/JSON.as" mod="1287605822000" size="818" optimizedsize="335">
+      <def id="com.adobe.serialization.json:JSON" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="com.adobe.serialization.json:JSONEncoder" />
+      <dep id="com.adobe.serialization.json:JSONDecoder" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientAbstract.as" mod="1287605825000" size="1611" optimizedsize="668">
+      <def id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="flash.events:Event" />
+      <dep id="it.gotoandplay.smartfoxserver:SmartFoxClient" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientMessaging.as" mod="1287605825000" size="1835" optimizedsize="805">
+      <def id="lib.smartfox.modules:SmartfoxClientMessaging" />
+      <pre id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientMessaging" />
+      <dep id="AS3" />
+      <dep id="Error" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/util/Entities.as" mod="1287605822000" size="2072" optimizedsize="1157">
+      <def id="it.gotoandplay.smartfoxserver.util:Entities" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/http/IHttpProtocolCodec.as" mod="1287605822000" size="896" optimizedsize="241">
+      <def id="it.gotoandplay.smartfoxserver.http:IHttpProtocolCodec" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/ISmartfoxClient.as" mod="1287605825000" size="1191" optimizedsize="432">
+      <def id="lib.smartfox:ISmartfoxClient" />
+      <pre id="Object" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientConnection" />
+      <dep id="AS3" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientRoom" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientConfig" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientBuddyList" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientUser" />
+      <dep id="lib.smartfox.modules:ISmartfoxClientMessaging" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientConfig.as" mod="1287605825000" size="2787" optimizedsize="944">
+      <def id="lib.smartfox.modules:SmartfoxClientConfig" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientConfig" />
+      <pre id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:TweensyPluginList)" mod="1232274940000" size="2071" optimizedsize="1152">
+      <def id="com.flashdynamix.motion.plugins:TweensyPluginList" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.motion.plugins:DisplayTween" />
+      <dep id="com.flashdynamix.motion.plugins:MovieClipTween" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="com.flashdynamix.motion.plugins:FilterTween" />
+      <dep id="com.flashdynamix.motion:TweensyGroup" />
+      <dep id="com.flashdynamix.motion.plugins:ObjectTween" />
+      <dep id="com.flashdynamix.utils:MultiTypeObjectPool" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="com.flashdynamix.motion.plugins:SoundTween" />
+      <dep id="com.flashdynamix.motion.plugins:ColorTween" />
+      <dep id="AS3" />
+      <dep id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="flash.geom:Matrix" />
+      <dep id="com.flashdynamix.motion.plugins:MatrixTween" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="flash.geom:ColorTransform" />
+      <dep id="flash.utils:Dictionary" />
+      <dep id="flash.display:MovieClip" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/http/RawProtocolCodec.as" mod="1287605822000" size="1103" optimizedsize="493">
+      <def id="it.gotoandplay.smartfoxserver.http:RawProtocolCodec" />
+      <pre id="it.gotoandplay.smartfoxserver.http:IHttpProtocolCodec" />
+      <pre id="Object" />
+      <dep id="it.gotoandplay.smartfoxserver.http:HttpConnection" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:DisplayTween)" mod="1232241384000" size="3395" optimizedsize="1838">
+      <def id="com.flashdynamix.motion.plugins:DisplayTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <pre id="Object" />
+      <dep id="AS3" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/SmartfoxClientUser.as" mod="1287605825000" size="2292" optimizedsize="1043">
+      <def id="lib.smartfox.modules:SmartfoxClientUser" />
+      <pre id="lib.smartfox.modules:SmartfoxClientAbstract" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientUser" />
+      <dep id="AS3" />
+      <dep id="Error" />
+      <dep id="it.gotoandplay.smartfoxserver:SFSEvent" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/handlers/ExtHandler.as" mod="1287605822000" size="1660" optimizedsize="926">
+      <def id="it.gotoandplay.smartfoxserver.handlers:ExtHandler" />
+      <pre id="it.gotoandplay.smartfoxserver.handlers:IMessageHandler" />
+      <pre id="Object" />
+      <dep id="it.gotoandplay.smartfoxserver:SmartFoxClient" />
+      <dep id="AS3" />
+      <dep id="it.gotoandplay.smartfoxserver.util:ObjectSerializer" />
+      <dep id="XML" />
+      <dep id="it.gotoandplay.smartfoxserver:SFSEvent" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientRoom.as" mod="1287605825000" size="2427" optimizedsize="629">
+      <def id="lib.smartfox.modules:ISmartfoxClientRoom" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="it.gotoandplay.smartfoxserver.data:Room" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientUser.as" mod="1287605825000" size="1610" optimizedsize="407">
+      <def id="lib.smartfox.modules:ISmartfoxClientUser" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/smartfox/modules/ISmartfoxClientConfig.as" mod="1287605825000" size="2946" optimizedsize="544">
+      <def id="lib.smartfox.modules:ISmartfoxClientConfig" />
+      <pre id="lib.smartfox.modules:ISmartfoxClientAbstract" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/http/LoaderFactory.as" mod="1287605822000" size="1295" optimizedsize="636">
+      <def id="it.gotoandplay.smartfoxserver.http:LoaderFactory" />
+      <pre id="Object" />
+      <dep id="flash.events:Event" />
+      <dep id="flash.net:URLLoaderDataFormat" />
+      <dep id="AS3" />
+      <dep id="flash.events:IOErrorEvent" />
+      <dep id="flash.net:URLLoader" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/primitive/map/HashMap.as" mod="1287605825000" size="1375" optimizedsize="667">
+      <def id="lib.primitive.map:HashMap" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/client/modules/IModuleStack.as" mod="1287605825000" size="1389" optimizedsize="432">
+      <def id="client.modules:IModuleStack" />
+      <pre id="Object" />
+      <dep id="client.modules.transitions:ITransition" />
+      <dep id="AS3" />
+      <dep id="org.osflash.signals:ISignal" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/src/lib/debug/getVanillaLogger.as" mod="1287605825000" size="788" optimizedsize="452">
+      <def id="lib.debug:getVanillaLogger" />
+      <dep id="lib.debug:VanillaLogger" />
+      <dep id="lib.debug:setVanillaLogger" />
+      <dep id="String" />
+      <dep id="AS3" />
+      <dep id="trace" />
+      <dep id="Function" />
+      <dep id="lib.debug:_logger" />
+      <dep id="flash.system:ApplicationDomain" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:FilterTween)" mod="1232241711000" size="2860" optimizedsize="1500">
+      <def id="com.flashdynamix.motion.plugins:FilterTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="flash.filters:BitmapFilter" />
+      <dep id="AS3" />
+      <dep id="flash.filters:ColorMatrixFilter" />
+      <dep id="flash.display:DisplayObject" />
+      <dep id="Math" />
+      <dep id="flash.utils:Dictionary" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/smartfox/src/it/gotoandplay/smartfoxserver/handlers/IMessageHandler.as" mod="1287605822000" size="781" optimizedsize="249">
+      <def id="it.gotoandplay.smartfoxserver.handlers:IMessageHandler" />
+      <pre id="Object" />
+      <dep id="AS3" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.motion.plugins:SoundTween)" mod="1232241758000" size="2961" optimizedsize="1469">
+      <def id="com.flashdynamix.motion.plugins:SoundTween" />
+      <pre id="com.flashdynamix.motion.plugins:AbstractTween" />
+      <dep id="AS3" />
+      <dep id="flash.media:SoundTransform" />
+      <dep id="Math" />
+    </script>
+    <script name="/Users/dave/Projects/huzutech/papier_mashup/core/3rdParty/Tweensy/releases/swc/TweensyOriginalCS4.swc(com.flashdynamix.utils:MultiTypeObjectPool)" mod="1232273704000" size="1456" optimizedsize="715">
+      <def id="com.flashdynamix.utils:MultiTypeObjectPool" />
+      <pre id="Object" />
+      <dep id="com.flashdynamix.utils:ObjectPool" />
+      <dep id="AS3" />
+      <dep id="flash.utils:Dictionary" />
+    </script>
+  </scripts>
+  <external-defs>
+    <ext id="flash.system:System" />
+    <ext id="flash.utils:ByteArray" />
+    <ext id="Math" />
+    <ext id="flash.ui:ContextMenuItem" />
+    <ext id="flash.system:ApplicationDomain" />
+    <ext id="flash.geom:Matrix" />
+    <ext id="flash.display:StageAlign" />
+    <ext id="flash.errors:IllegalOperationError" />
+    <ext id="XMLList" />
+    <ext id="flash.events:Event" />
+    <ext id="flash.net:URLRequestMethod" />
+    <ext id="AS3" />
+    <ext id="flash.utils:describeType" />
+    <ext id="flash.net:LocalConnection" />
+    <ext id="flash.net:URLRequest" />
+    <ext id="Function" />
+    <ext id="flash.events:IOErrorEvent" />
+    <ext id="flash.utils:setTimeout" />
+    <ext id="XML" />
+    <ext id="flash.display:InteractiveObject" />
+    <ext id="flash.ui:ContextMenu" />
+    <ext id="flash.display:Shape" />
+    <ext id="flash.events:IEventDispatcher" />
+    <ext id="flash.geom:Rectangle" />
+    <ext id="String" />
+    <ext id="ArgumentError" />
+    <ext id="flash.display:StageDisplayState" />
+    <ext id="flash.utils:Dictionary" />
+    <ext id="flash.events:ErrorEvent" />
+    <ext id="flash.net:Socket" />
+    <ext id="trace" />
+    <ext id="flash.filters:ColorMatrixFilter" />
+    <ext id="Error" />
+    <ext id="flash.events:EventDispatcher" />
+    <ext id="flash.media:SoundTransform" />
+    <ext id="Date" />
+    <ext id="flash.geom:ColorTransform" />
+    <ext id="flash.events:SecurityErrorEvent" />
+    <ext id="flash.net:URLLoaderDataFormat" />
+    <ext id="flash.events:ProgressEvent" />
+    <ext id="flash.media:SoundChannel" />
+    <ext id="flash.events:ContextMenuEvent" />
+    <ext id="flash.text:TextField" />
+    <ext id="flash.display:DisplayObject" />
+    <ext id="__AS3__.vec:Vector" />
+    <ext id="flash.net:URLLoader" />
+    <ext id="Object" />
+    <ext id="flash.display:MovieClip" />
+    <ext id="flash.net:URLVariables" />
+    <ext id="flash.display:DisplayObjectContainer" />
+    <ext id="flash.filters:BitmapFilter" />
+    <ext id="flash.text:TextFormat" />
+    <ext id="flash.display:Graphics" />
+    <ext id="flash.display:Sprite" />
+    <ext id="flash.display:Loader" />
+    <ext id="TypeError" />
+    <ext id="flash.display:Stage" />
+    <ext id="flash.system:LoaderContext" />
+    <ext id="flash.utils:getQualifiedClassName" />
+    <ext id="flash.net:FileReference" />
+    <ext id="flash.display:StageScaleMode" />
+    <ext id="flash.text:TextFieldAutoSize" />
+    <ext id="flash.utils:getTimer" />
+  </external-defs>
+</report>
