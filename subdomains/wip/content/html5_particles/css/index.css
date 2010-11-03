@@ -1,0 +1,47 @@
+body {
+    font-family:Arial, Verdana, Sans-serif;
+    font-size:14pt;
+    background:#5F7A46;
+}
+#everything {
+    margin: 32px auto auto auto;
+    padding:16px 16px 16px 16px;
+    width:800px;
+    height:600px;
+    background:#ADC762;
+    text-align:center;
+}
+#canvas-panel {
+	position:relative;
+    width:800px;
+    height:600px;
+    background:#000000;
+}
+#stats {
+	font-family: 'Courier', mono;
+	font-size:8pt;
+}
+#stats b {
+	color:#ff0000;
+}
+#footer-stuff {
+	position:relative;
+    margin: 32px auto auto auto;
+    width:800px;
+}
+#noise-and-heat {
+	font-family: 'Tangerine', arial, serif;
+	font-size:12pt;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+#noise-and-heat a {
+	color:#003300;
+	text-decoration:none;
+}
+#flattr-button {
+	position:absolute;
+	top:0px;
+	right:-10px;
+}
