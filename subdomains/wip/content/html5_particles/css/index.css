@@ -4,7 +4,7 @@ body {
     background:#5F7A46;
 }
 #everything {
-    margin: 32px auto auto auto;
+    margin: 1px auto auto auto;
     padding:16px 16px 16px 16px;
     width:800px;
     height:600px;
@@ -23,6 +23,13 @@ body {
 }
 #stats b {
 	color:#ff0000;
+}
+#options-panel {
+    margin: 9px auto auto auto;
+    padding:4px 16px 4px 16px;
+	position: relative;
+    width:800px;
+    font-size:12pt;
 }
 #footer-stuff {
 	position:relative;

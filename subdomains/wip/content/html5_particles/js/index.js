@@ -4,6 +4,8 @@ var width;
 var height;
 var context;
 
+var blur;
+
 var fps = 30;
 var timerID;
 
@@ -35,10 +37,15 @@ function update() {
 }
 
 function render() {
-	context.fillStyle = "#000000";
-	context.globalAlpha = 0.2;
-	context.fillRect(0, 0, width, height);
-	context.globalAlpha = 1;
+	if(blur) {
+		context.fillStyle = "#000000";
+		context.globalAlpha = 0.2;
+		context.fillRect(0, 0, width, height);
+		context.globalAlpha = 1;
+	} else {
+		context.fillStyle = "#000000";
+		context.fillRect(0, 0, width, height);
+	}
 
 	particle_render(context);
 }
@@ -89,7 +96,14 @@ function tick() {
 	}
 }
 
+function updateBlur() {
+	blur = $('#blur').is(':checked');
+}
+
 $(document).ready(function() {
+	$('#blur').click(updateBlur);
+	updateBlur();
+	
 	aquire();
 	initialise();
 	stats_time_lastTick = new Date().getTime();
