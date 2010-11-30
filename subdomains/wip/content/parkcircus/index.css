@@ -67,7 +67,7 @@ body {
 #linkbar {
 	margin: 18px auto auto auto;
 }
-#linkbar a{
+#linkbar a:link, a:visited, a:hover, a:active {
 	border-style: none;
 }
 #logo-fb {
