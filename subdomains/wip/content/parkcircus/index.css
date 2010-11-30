@@ -1,0 +1,89 @@
+@font-face {
+	font-family: "Myriad Pro";
+	src: local("Myriad Pro"), url("myriadwebpro.ttf");
+}
+body {
+	font-family: "Myriad Pro", "Trebuchet MS", Helvetica, sans-serif;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+#logo {
+	margin: 116px auto auto auto;
+}
+#download-message {
+	margin: 50px auto auto auto;
+	font-size: 22px;
+	letter-spacing: 0.2em;
+}
+#email {
+	margin: auto auto 24px auto;
+	width: 219px;
+	height: 26px;
+	background-image: url("input.png");
+	background-repeat: no-repeat;
+}
+#emailaddress {
+	font-family: "Myriad Pro", sans-serif;
+	font-style: italic;
+	font-size: 14px;
+	width: 216px;
+	height: 26px;
+	background-color: transparent;
+	border: none;
+	text-align: center;
+	letter-spacing: 0.2em;
+}
+.emailaddress-prompt {
+	color: gray;
+}
+.emailaddress-valid {
+	color: white;
+}
+.emailaddress-invalid {
+	color: red;
+}
+#button {
+	margin: auto auto auto auto;
+	width: 109px;
+	height: 19px;
+	background-image: url("button.png");
+	background-repeat: no-repeat;
+}
+#button a:link, a:visited, a:hover, a:active {
+	padding-top: 3px;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	color: white;
+	display: block;
+}
+#spiel {
+	margin: 65px auto auto auto;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+}
+#linkbar {
+	margin: 18px auto auto auto;
+}
+#linkbar a{
+	border-style: none;
+}
+#logo-fb {
+	margin-right: 13px;
+}
+#logo-ms {
+	padding-right: 13px;
+	padding-left: 13px;
+}
+#logo-t {
+	padding-right: 13px;
+	padding-left: 13px;
+}
+#logo-yt {
+	padding-left: 13px;
+}
+.make-see-through {
+	opacity:0.2;
+	filter:alpha(opacity=20);
+}
