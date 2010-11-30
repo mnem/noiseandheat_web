@@ -51,12 +51,13 @@ body {
 	background-repeat: no-repeat;
 }
 #button a:link, a:visited, a:hover, a:active {
-	padding-top: 3px;
+	padding-top: 2px;
 	font-size: 12px;
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	color: white;
 	display: block;
+	border-style: none;
 }
 #spiel {
 	margin: 65px auto auto auto;
