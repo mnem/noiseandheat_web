@@ -60,31 +60,26 @@ body {
 	border-style: none;
 }
 #spiel {
-	margin: 65px auto auto auto;
+	margin: 60px auto auto auto;
 	font-size: 12px;
 	letter-spacing: 0.1em;
 }
 #linkbar {
-	margin: 18px auto auto auto;
-	width: 256px;
-	height: 64px;
+	margin: 24px auto auto auto;
+	width: 100%;
+	text-align: center;
 }
 #linkbar img {
 	border-style: none;
 }
-#logo-fb {
+#linkbar ul {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+#linkbar li {
+	margin-left: 13px;
 	margin-right: 13px;
-}
-#logo-ms {
-	padding-right: 13px;
-	padding-left: 13px;
-}
-#logo-t {
-	padding-right: 13px;
-	padding-left: 13px;
-}
-#logo-yt {
-	padding-left: 13px;
+    display: inline;
 }
 .make-see-through {
 	opacity:0.2;
