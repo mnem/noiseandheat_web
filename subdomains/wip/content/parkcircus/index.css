@@ -80,6 +80,9 @@ body {
 	margin-left: 13px;
 	margin-right: 13px;
     display: inline;
+    list-style: none;
+    height: 100%;
+    width: 100%;
 }
 .make-see-through {
 	opacity:0.2;
