@@ -32,23 +32,23 @@ from deployment.virtual_host import VirtualHost
 
 class Subdomain(object):
     """Provides an interface to manipulate subdomains"""
-    
+
     def __init__(self, subdomain):
         self.subdomain = subdomain
         self.content_path = deployment.server_config.content_path(self.subdomain)
         self.virtual_host = VirtualHost(self.subdomain)
 
-    def write_virtual_host_file(self, override_subdomain=None):
-        self.virtual_host.write_conf(override_subdomain)
-    
+    def write_virtual_host_file(self, alias_subdomain=None, alias_domain=None):
+        self.virtual_host.write_conf(alias_subdomain, alias_domain)
+
     def set_content_filesystem_owner(self):
-        change_owner(self.content_path, 
-                     deployment.server_config.www_user, 
+        change_owner(self.content_path,
+                     deployment.server_config.www_user,
                      deployment.server_config.www_group)
-    
+
     def copy_to_content(self, source_path, ignore=None):
         remove_if_exists_but_keep_backup(self.content_path)
-        copytree(source_path, 
+        copytree(source_path,
                  self.content_path,
                  ignore)
         self.set_content_filesystem_owner()

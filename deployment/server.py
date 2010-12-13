@@ -61,9 +61,9 @@ class ServerConfiguration(object):
         return os.path.join(self.virtual_hosts_conf_root,
                             self.full_domain_name(subdomain, domain) + ".vhost")
 
-    def content_path(self, subdomain, domain=None):
+    def content_path(self, subdomain):
         """Returns the base bath for the content for the subdomain."""
-        return os.path.join(self.htdocs_root, self.full_domain_name(subdomain, domain))
+        return os.path.join(self.htdocs_root, self.full_domain_name(subdomain))
 
     def restart(self):
         """Attempts to restart the http server using a couple of commands"""

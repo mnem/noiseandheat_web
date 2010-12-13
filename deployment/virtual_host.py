@@ -39,16 +39,15 @@ class VirtualHost(object):
             raise ValueError("subdomain can't be None")
         self.subdomain = subdomain
 
-    def write_conf(self, override_subdomain=None):
+    def write_conf(self, alias_subdomain=None, alias_domain=None):
         """Writes the virtual host configuration file to the configuration
         directory specified by the server_configuration object"""
-        if override_subdomain is None:
-            conf_filename = deployment.server_config.virtual_host_conf_filename(self.subdomain)
-            domain_name = deployment.server_config.full_domain_name(self.subdomain)
-        else:
-            conf_filename = deployment.server_config.virtual_host_conf_filename(override_subdomain)
-            domain_name = deployment.server_config.full_domain_name(override_subdomain)
-        
+        if alias_subdomain is None:
+            alias_subdomain = self.subdomain
+
+        conf_filename = deployment.server_config.virtual_host_conf_filename(alias_subdomain, alias_domain)
+        domain_name = deployment.server_config.full_domain_name(alias_subdomain, alias_domain)
+
         content_path = deployment.server_config.content_path(self.subdomain)
 
         if os.path.exists(conf_filename):
@@ -69,8 +68,8 @@ class VirtualHost(object):
             file = open(conf_filename, "w")
             file.write(virtual_host_section)
             file.close();
-            change_owner(conf_filename, 
-                         deployment.server_config.www_user, 
+            change_owner(conf_filename,
+                         deployment.server_config.www_user,
                          deployment.server_config.www_group)
         except IOError as e:
             if e.errno == 13:
@@ -78,7 +77,7 @@ class VirtualHost(object):
                                     "Perhaps you should sudo this script.")
             else:
                 raise e
-        
+
     _VIRTUAL_HOST_SECTION_TEMPLATE = ("# Created %(timestamp)s\n"
                                       "<VirtualHost *:80>\n"
                                       "    DocumentRoot %(content)s\n"
