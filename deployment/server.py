@@ -42,26 +42,29 @@ class ServerConfiguration(object):
         self.www_user = www_user
         self.www_group = www_group
 
-    def full_domain_name(self, subdomain):
+    def full_domain_name(self, subdomain, domain=None):
         """Returns the full domain name."""
+        if domain is None:
+            domain = self.domain
+
         subdomain_len = len(subdomain)
         if subdomain_len == 0:
-            return self.domain
+            return domain
         elif subdomain[-1] == ".":
-            return subdomain  + self.domain
+            return subdomain  + domain
         else:
-            return subdomain + "." + self.domain
+            return subdomain + "." + domain
 
-    def virtual_host_conf_filename(self, subdomain):
+    def virtual_host_conf_filename(self, subdomain, domain=None):
         """Returns the filename for the virtual host configuration for the
         subdomain."""
         return os.path.join(self.virtual_hosts_conf_root,
-                            self.full_domain_name(subdomain) + ".vhost")
+                            self.full_domain_name(subdomain, domain) + ".vhost")
 
-    def content_path(self, subdomain):
+    def content_path(self, subdomain, domain=None):
         """Returns the base bath for the content for the subdomain."""
-        return os.path.join(self.htdocs_root, self.full_domain_name(subdomain))
-        
+        return os.path.join(self.htdocs_root, self.full_domain_name(subdomain, domain))
+
     def restart(self):
         """Attempts to restart the http server using a couple of commands"""
         for restart_command in self._HTTPD_RESTART_COMMANDS:
@@ -74,7 +77,7 @@ class ServerConfiguration(object):
             else:
                 deployment.log.message("Command failed with code %d. Trying another way." % p.returncode)
         deployment.log.message("Giving up trying to restart httpd. You'll have to do it yourself.")
-        
+
     _HTTPD_RESTART_COMMANDS = ["sudo service httpd restart",
                                "sudo apachectl restart",
                                "sudo apache2ctl restart"]

@@ -1,3 +1,6 @@
 [submodule "subdomains/binary/content"]
 	path = subdomains/binary/content
 	url = git://github.com/mnem/binary_day.git
+[submodule "subdomains/parkcircus/content"]
+	path = subdomains/parkcircus/content
+	url = git://github.com/mnem/park_circus_web.git
