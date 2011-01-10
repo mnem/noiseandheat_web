@@ -44,9 +44,11 @@ body a:link, a:visited, a:hover, a:active
 
 #navigation-bar
 {
-	position: absolute;
+	position: fixed;
+	z-index: 100;
 	top: 36px;
 	left: 335px;
+	background-color: white;
 }
 
 .image-item
