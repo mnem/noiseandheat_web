@@ -1,0 +1,59 @@
+body
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 24px;
+	font-weight: lighter;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+body a:link, a:visited, a:hover, a:active
+{
+	text-decoration: none;
+}
+
+#download
+{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	display: block;
+}
+
+#full-page-box
+{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	width: 2134px;
+	height: 1600px;
+	display: block;
+	position: absolute;
+}
+
+#details-card
+{
+	position: absolute;
+	top: 43px;
+	left: 19px;
+	font-size: 34px;
+}
+
+#contact-details
+{
+	font-size: 24px;
+}
+
+#navigation-bar
+{
+	position: absolute;
+	top: 36px;
+	left: 335px;
+}
+
+.image-item
+{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: absolute;
+	display: block;
+}
+
