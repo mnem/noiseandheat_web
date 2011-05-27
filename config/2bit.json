@@ -2,7 +2,7 @@
     "subdomains_path" : "2bit.subdomains",
 
     "domain" : "2bit.cc",
-    "htdocs_root" : "/var/2bit",
+    "htdocs_root" : "/var/www",
     "virtual_hosts_conf_root" : "/etc/httpd/vhosts.d",
     "www_user" : "apache",
     "www_group"  : "apache"
