@@ -1,0 +1,31 @@
+body {
+    font-family:Arial, Verdana, Sans-serif;
+    font-size:18pt;
+    background:#5F7A46;
+}
+#header-bit {
+	margin: 32px auto auto auto;
+	font-family: 'Tangerine', arial, serif;
+	font-size:24pt;
+	color:#003300;
+	text-align:center;
+}
+#apology {
+	margin: -16px auto auto auto;
+	padding: 6px 0 6px 0;
+	background:#ADC762;
+	text-align:center;
+	width:290px;
+}
+#links {
+	margin: 8px auto auto auto;
+	padding: 6px 0 6px 0;
+	background:#FFF27F;
+	width:290px;
+    font-size:14pt;
+	text-align:center;
+}
+#links a {
+	text-decoration:none;
+	color:#302B1F;
+}
